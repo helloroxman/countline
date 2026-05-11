@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countline — Count the days. Prepare for what matters.</title>
+  <meta name="description" content="Countline helps you track important events, plan the steps before them, and keep every meaningful date clear with countdowns, checklists, reminders, and widgets.">
+  <style>
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Regular-web.woff2') format('woff2'),
+           url('font/TWKEverett-Regular-web.woff') format('woff'),
+           url('font/TWKEverett-Regular-web.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Bold-web.woff2') format('woff2'),
+           url('font/TWKEverett-Bold-web.woff') format('woff'),
+           url('font/TWKEverett-Bold-web.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'TWK Everett', sans-serif;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      height: 100vh;
+      padding: 0 120px;
+      overflow: hidden;
+    }
+
+    /* ── Logo ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: absolute;
+      top: 60px;
+      left: 120px;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: #000;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo-icon .row {
+      position: absolute;
+      left: 8.75px;
+      height: 18.15px;
+      width: 38.5px;
+      display: flex;
+      border-radius: 124px;
+      overflow: hidden;
+    }
+
+    .logo-icon .row:first-child { top: 8.75px; border-radius: 124px; }
+    .logo-icon .row:last-child { bottom: 8.75px; border-radius: 248px; }
+
+    .logo-icon .bar { height: 100%; }
+    .logo-icon .row:first-child .bar:nth-child(1) { width: 23.1px; background: #ff7c02; }
+    .logo-icon .row:first-child .bar:nth-child(2) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:first-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:first-child .bar:nth-child(4) { width: 3.85px; background: #ffa0f6; }
+    .logo-icon .row:first-child .bar:nth-child(5) { width: 3.85px; background: #af78d3; }
+    .logo-icon .row:last-child .bar:nth-child(1) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:last-child .bar:nth-child(2) { width: 11.55px; background: #ffa0f6; }
+    .logo-icon .row:last-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:last-child .bar:nth-child(4) { width: 15.4px; background: #d0fa34; }
+    .logo-icon .row:last-child .bar:nth-child(5) { width: 3.85px; background: #019644; }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Content ── */
+    .content {
+      position: absolute;
+      top: calc(50% - 39px);
+      transform: translateY(-50%);
+      left: 120px;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .headline {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* ── App Store Button ── */
+    .store-button {
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .store-button:hover {
+      opacity: 0.85;
+    }
+
+    .store-button img {
+      display: block;
+      width: 186px;
+      height: 60px;
+    }
+
+    /* ── Bottom Section ── */
+    .bottom {
+      position: absolute;
+      bottom: 60px;
+      left: 120px;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      display: flex;
+      text-decoration: none;
+      color: #000;
+      transition: opacity 0.2s;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.6;
+    }
+
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .contact-text {
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .contact-text a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
+
+    .legal-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .legal-links a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
+
+    /* ── Phone Mockups ── */
+    .phones {
+      position: absolute;
+      left: 620px;
+      right: 120px;
+      top: 60px;
+      bottom: 60px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone {
+      flex: 1 1 0;
+      min-width: 0;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(5px 5px 10px rgba(28,28,28,0.15)) drop-shadow(10px 10px 30px rgba(28,28,28,0.1));
+    }
+
+    .phone img {
+      display: block;
+      max-height: calc(100vh - 120px);
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    /* ── Responsive: Large screens ── */
+    @media (min-width: 1441px) {
+      .page {
+        max-width: none;
+        padding: 0 6vw;
+      }
+
+      .logo {
+        left: 6vw;
+      }
+
+      .content {
+        left: 6vw;
+      }
+
+      .bottom {
+        left: 6vw;
+      }
+
+      .phones {
+        left: calc(6vw + 540px);
+        right: 6vw;
+      }
+    }
+
+    /* ── Responsive: Tablet ── */
+    @media (max-width: 1320px) {
+      .page {
+        height: auto;
+        min-height: auto;
+        padding: 40px 80px;
+        overflow: visible;
+      }
+
+      .logo {
+        position: static;
+      }
+
+      .content {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 60px;
+      }
+
+      .bottom {
+        position: static;
+        max-width: 480px;
+        margin-top: 60px;
+      }
+
+      .phones {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin-top: 60px;
+        margin-left: -10px;
+        margin-right: -10px;
+        justify-content: center;
+      }
+
+      .phone {
+        width: 295px;
+        flex: 0 0 auto;
+        max-height: none;
+      }
+
+      .phone img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        max-width: none;
+      }
+    }
+
+    /* ── Responsive: Mobile ── */
+    @media (max-width: 520px) {
+      .page {
+        padding: 20px;
+      }
+
+      .logo {
+        gap: 11px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      .logo-icon .row {
+        left: 6.25px;
+        height: 13px;
+        width: 27.5px;
+      }
+
+      .logo-icon .row:first-child { top: 6.25px; }
+      .logo-icon .row:last-child { bottom: 6.25px; }
+
+      .logo-icon .row:first-child .bar:nth-child(1) { width: 16.5px; }
+      .logo-icon .row:first-child .bar:nth-child(2) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(4) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(5) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(1) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(2) { width: 8.25px; }
+      .logo-icon .row:last-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(4) { width: 11px; }
+      .logo-icon .row:last-child .bar:nth-child(5) { width: 2.75px; }
+
+      .logo-text {
+        font-size: 34px;
+      }
+
+      .content {
+        margin-top: 40px;
+      }
+
+      .headline {
+        font-size: 36px;
+      }
+
+      .phones {
+        margin-top: 40px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 20px;
+        justify-content: center;
+      }
+
+      .phone-2 {
+        display: none;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .phone {
+        width: 270px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Logo -->
+    <div class="logo">
+      <div class="logo-icon">
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <span class="logo-text">Countline</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <h1 class="headline">Count the days.<br>Prepare for what<br>matters.</h1>
+      <p class="description">Countline helps you track important events, plan the steps before them, and keep every meaningful date clear with countdowns, checklists, reminders, and widgets.</p>
+      <a href="#" class="store-button" aria-label="Download on the App Store">
+        <img src="img/appstore-button.svg" alt="Coming Soon on the App Store" width="186" height="60">
+      </a>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom">
+      <div class="social-icons">
+        <a href="https://x.com/countlineapp" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.29 10.16L23.03 0h-2.07l-7.6 8.83L7.33 0H.34l9.16 13.34L.34 24h2.07l8.01-9.31 6.4 9.31h6.99l-9.5-13.84Zm-2.84 3.3l-.93-1.33L3.16 1.56h3.18l5.96 8.53.93 1.33 7.75 11.09h-3.18l-6.35-9.05Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/company/countline" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 24H0V0h24v24ZM3.55 20.46h3.57V9H3.55v11.46ZM16.18 8.72c-1.73 0-2.9.95-3.37 1.85h-.05V9H9.35v11.46h3.56v-5.67c0-1.49.28-2.94 2.13-2.94 1.83 0 1.85 1.71 1.85 3.04v5.57h3.56v-6.28c0-3.09-.67-5.46-4.27-5.46ZM5.33 3.3a2.07 2.07 0 0 0 0 4.13 2.07 2.07 0 0 0 0-4.13Z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      <p class="contact-text">In the meantime, if you need to contact us you can reach us at <a href="mailto:hello@countline.app">hello@countline.app</a> or through our accounts on <a href="https://x.com/countlineapp" target="_blank" rel="noopener">X</a> (formerly Twitter) and LinkedIn below.</p>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+
+    <!-- Phone Mockups -->
+    <div class="phones">
+      <div class="phone phone-1">
+        <img src="img/phone-events.png" alt="Countline app showing event countdown list" width="730" height="1418">
+      </div>
+      <div class="phone phone-2">
+        <img src="img/phone-detail.png" alt="Countline app showing Summer Vacation event details with checklist" width="730" height="1418">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — Countline</title>
+  <meta name="description" content="Terms of Use for Countline app.">
+  <style>
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Regular-web.woff2') format('woff2'),
+           url('font/TWKEverett-Regular-web.woff') format('woff'),
+           url('font/TWKEverett-Regular-web.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Bold-web.woff2') format('woff2'),
+           url('font/TWKEverett-Bold-web.woff') format('woff'),
+           url('font/TWKEverett-Bold-web.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'TWK Everett', sans-serif;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 80px 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ── Logo ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: #000;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo-icon .row {
+      position: absolute;
+      left: 8.75px;
+      height: 18.15px;
+      width: 38.5px;
+      display: flex;
+      border-radius: 124px;
+      overflow: hidden;
+    }
+
+    .logo-icon .row:first-child { top: 8.75px; border-radius: 124px; }
+    .logo-icon .row:last-child { bottom: 8.75px; border-radius: 248px; }
+
+    .logo-icon .bar { height: 100%; }
+    .logo-icon .row:first-child .bar:nth-child(1) { width: 23.1px; background: #ff7c02; }
+    .logo-icon .row:first-child .bar:nth-child(2) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:first-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:first-child .bar:nth-child(4) { width: 3.85px; background: #ffa0f6; }
+    .logo-icon .row:first-child .bar:nth-child(5) { width: 3.85px; background: #af78d3; }
+    .logo-icon .row:last-child .bar:nth-child(1) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:last-child .bar:nth-child(2) { width: 11.55px; background: #ffa0f6; }
+    .logo-icon .row:last-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:last-child .bar:nth-child(4) { width: 15.4px; background: #d0fa34; }
+    .logo-icon .row:last-child .bar:nth-child(5) { width: 3.85px; background: #019644; }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Content ── */
+    .title {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .text h2 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .text p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -0.43px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .page {
+        padding: 40px 20px;
+        gap: 32px;
+      }
+
+      .logo {
+        gap: 11px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      .logo-icon .row {
+        left: 6.25px;
+        height: 13px;
+        width: 27.5px;
+      }
+
+      .logo-icon .row:first-child { top: 6.25px; }
+      .logo-icon .row:last-child { bottom: 6.25px; }
+
+      .logo-icon .row:first-child .bar:nth-child(1) { width: 16.5px; }
+      .logo-icon .row:first-child .bar:nth-child(2) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(4) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(5) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(1) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(2) { width: 8.25px; }
+      .logo-icon .row:last-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(4) { width: 11px; }
+      .logo-icon .row:last-child .bar:nth-child(5) { width: 2.75px; }
+
+      .logo-text {
+        font-size: 34px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <span class="logo-text">Countline</span>
+    </a>
+
+    <h1 class="title">Terms of Use</h1>
+
+    <div class="text">
+      <p>Effective Date: May 8, 2026<br><br>These Terms of Use ("Terms") govern your use of Countline ("the App", "we", "us", or "our").<br><br>Countline is developed by Roxman Agency.<br><br>By downloading, accessing, or using the App, you agree to these Terms. If you do not agree to these Terms, please do not use the App.</p>
+
+      <h2>1. Use of the App</h2>
+      <p>Countline helps you create countdowns, organize events, manage checklists, set reminders, customize categories, use widgets, and personalize the App with themes and appearance settings.<br><br>You may use the App for personal, non-commercial purposes in accordance with these Terms and all applicable laws.</p>
+
+      <h2>2. Your Data</h2>
+      <p>The content you create in the App, including countdown cards, events, dates, checklists, notes, categories, reminders, widget preferences, themes, appearance settings, and app preferences, belongs to you.<br><br>The App may store this information locally on your device and, if you enable iCloud sync, synchronize it through your personal iCloud account.<br><br>We do not claim ownership of your content.<br><br>You are responsible for managing your own device, Apple ID, iCloud settings, backups, and access to your data.</p>
+
+      <h2>3. No Account Required</h2>
+      <p>The App does not require registration, sign-in, or an account.<br><br>You are responsible for maintaining access to your device and for managing your own backups, including any iCloud backups or iCloud sync settings.</p>
+
+      <h2>4. iCloud Sync</h2>
+      <p>The App may offer optional iCloud sync.<br><br>If iCloud sync is enabled, your App data may be stored in your personal iCloud account and synchronized across your Apple devices.<br><br>iCloud storage, syncing, and backups are provided by Apple and are subject to Apple's terms, privacy policies, and device settings.<br><br>We do not operate our own server for storing your App data and cannot guarantee the availability, accuracy, or timing of iCloud synchronization.</p>
+
+      <h2>5. Reminders and Notifications</h2>
+      <p>The App may provide reminders and notifications based on the events, countdowns, or checklist items you create.<br><br>You understand that notifications may not always be delivered on time due to device settings, operating system limitations, Focus modes, battery settings, notification permissions, network conditions, iCloud sync delays, or other factors outside our control.<br><br>You should not rely on the App as the only method for remembering critical, urgent, medical, legal, financial, safety-related, or time-sensitive events.</p>
+
+      <h2>6. Widgets</h2>
+      <p>The App may display event and countdown information through Home Screen and Lock Screen widgets.<br><br>Widget behavior may depend on iOS settings, system limitations, device state, iCloud sync status, and Apple's widget update policies.<br><br>We cannot guarantee that widgets will always update instantly or display information without delay.</p>
+
+      <h2>7. Acceptable Use</h2>
+      <p>You agree not to:<br><br>• Use the App for any unlawful purpose<br><br>• Attempt to reverse engineer, modify, or interfere with the App<br><br>• Use the App in a way that could damage, disable, or impair its functionality<br><br>• Copy, resell, redistribute, or commercially exploit the App without permission<br><br>• Use the App to store or manage information in a way that violates applicable laws or the rights of others<br><br>• Circumvent, disable, or interfere with premium feature access, purchase validation, or restore purchase functionality</p>
+
+      <h2>8. Intellectual Property</h2>
+      <p>The App, including its design, interface, features, graphics, text, branding, icons, software, and other materials, is owned by Roxman Agency or its licensors.<br><br>You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for personal use.<br><br>These Terms do not transfer any ownership rights to you.</p>
+
+      <h2>9. Purchases</h2>
+      <p>The App may offer optional in-app purchases, such as premium themes and advanced category customization features, including renaming, sorting, and adding categories.<br><br>All purchases are processed through Apple's App Store.<br><br>We do not directly process payments and we do not store your payment information, such as your credit card number, billing address, or Apple ID payment details.<br><br>Purchase history, refunds, billing, and payment processing are managed by Apple according to Apple's own terms and policies.<br><br>The App may use Apple's StoreKit framework to check purchase status, restore previous purchases, and provide access to purchased features.</p>
+
+      <h2>10. Free and Paid Features</h2>
+      <p>Some features of the App may be available for free, while others may require an in-app purchase.<br><br>Free features may include basic countdown and category functionality.<br><br>Paid features may include premium themes and advanced category customization, such as renaming additional categories, sorting categories, and adding new categories.<br><br>We may change, add, improve, or remove features over time.<br><br>If we make changes to paid features, we will do so in accordance with applicable App Store rules and consumer protection laws.</p>
+
+      <h2>11. No Subscriptions</h2>
+      <p>The App does not currently offer subscriptions.<br><br>If subscriptions are added in the future, these Terms will be updated and subscription terms, renewal details, cancellation options, and pricing information will be provided where required.</p>
+
+      <h2>12. Data Loss and Backups</h2>
+      <p>Although the App is designed to store your data on your device and, if enabled, through iCloud sync, we cannot guarantee that data will never be lost, corrupted, delayed, or unavailable.<br><br>You are responsible for maintaining your device, Apple ID, iCloud account, backups, and any other settings that may affect access to your data.<br><br>We are not responsible for data loss caused by device failure, deletion of the App, iCloud settings, operating system issues, user actions, or other factors outside our control.</p>
+
+      <h2>13. Disclaimer</h2>
+      <p>The App is provided "as is" and "as available."<br><br>We do not guarantee that the App will be uninterrupted, error-free, always available, or suitable for every purpose.<br><br>We do not guarantee that reminders, widgets, countdowns, notifications, iCloud sync, or app data will always be accurate, immediate, or available.<br><br>You use the App at your own discretion and risk.</p>
+
+      <h2>14. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Roxman Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, missed events, missed reminders, lost profits, interruption of use, or loss of access to App data.<br><br>Our total liability for any claim related to the App shall not exceed the amount you paid for the App or its services, if any, during the twelve months before the claim.<br><br>Some jurisdictions do not allow certain limitations of liability, so some of the above limitations may not apply to you.</p>
+
+      <h2>15. App Store Terms</h2>
+      <p>Your use of the App is also subject to Apple's applicable App Store terms, Apple Media Services Terms and Conditions, and any other applicable Apple rules or policies.<br><br>Apple is not responsible for providing maintenance or support for the App.</p>
+
+      <h2>16. Changes to the App</h2>
+      <p>We may update, modify, suspend, or discontinue any part of the App at any time.<br><br>We may release updates to improve functionality, fix bugs, improve design, maintain compatibility, or add new features.<br><br>Some updates may be required for continued use of the App.</p>
+
+      <h2>17. Termination</h2>
+      <p>We may suspend or terminate your access to the App if you violate these Terms or use the App in a way that may cause harm to us, other users, or the App.<br><br>You may stop using the App at any time by deleting it from your device.</p>
+
+      <h2>18. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time.<br><br>If we make changes, we will update the "Effective Date" at the top of this page.<br><br>Your continued use of the App after the changes means that you accept the updated Terms.</p>
+
+      <h2>19. Governing Law</h2>
+      <p>These Terms are governed by the laws applicable in the jurisdiction of Roxman Agency, unless otherwise required by applicable consumer protection laws.</p>
+
+      <h2>20. Contact Us</h2>
+      <p>If you have any questions about these Terms, you can contact us at:<br><br><a href="mailto:support@countline.app">support@countline.app</a><br><a href="https://www.countline.app">www.countline.app</a></p>
+    </div>
+  </div>
+</body>
+</html>

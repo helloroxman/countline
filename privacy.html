@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Countline</title>
+  <meta name="description" content="Privacy Policy for Countline app.">
+  <style>
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Regular-web.woff2') format('woff2'),
+           url('font/TWKEverett-Regular-web.woff') format('woff'),
+           url('font/TWKEverett-Regular-web.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TWK Everett';
+      src: url('font/TWKEverett-Bold-web.woff2') format('woff2'),
+           url('font/TWKEverett-Bold-web.woff') format('woff'),
+           url('font/TWKEverett-Bold-web.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'TWK Everett', sans-serif;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 80px 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ── Logo ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: #000;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo-icon .row {
+      position: absolute;
+      left: 8.75px;
+      height: 18.15px;
+      width: 38.5px;
+      display: flex;
+      border-radius: 124px;
+      overflow: hidden;
+    }
+
+    .logo-icon .row:first-child { top: 8.75px; border-radius: 124px; }
+    .logo-icon .row:last-child { bottom: 8.75px; border-radius: 248px; }
+
+    .logo-icon .bar { height: 100%; }
+    .logo-icon .row:first-child .bar:nth-child(1) { width: 23.1px; background: #ff7c02; }
+    .logo-icon .row:first-child .bar:nth-child(2) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:first-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:first-child .bar:nth-child(4) { width: 3.85px; background: #ffa0f6; }
+    .logo-icon .row:first-child .bar:nth-child(5) { width: 3.85px; background: #af78d3; }
+    .logo-icon .row:last-child .bar:nth-child(1) { width: 3.85px; background: #fcd12d; }
+    .logo-icon .row:last-child .bar:nth-child(2) { width: 11.55px; background: #ffa0f6; }
+    .logo-icon .row:last-child .bar:nth-child(3) { width: 3.85px; background: #0381ef; }
+    .logo-icon .row:last-child .bar:nth-child(4) { width: 15.4px; background: #d0fa34; }
+    .logo-icon .row:last-child .bar:nth-child(5) { width: 3.85px; background: #019644; }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Content ── */
+    .title {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .text h2 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .text p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -0.43px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .page {
+        padding: 40px 20px;
+        gap: 32px;
+      }
+
+      .logo {
+        gap: 11px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      .logo-icon .row {
+        left: 6.25px;
+        height: 13px;
+        width: 27.5px;
+      }
+
+      .logo-icon .row:first-child { top: 6.25px; }
+      .logo-icon .row:last-child { bottom: 6.25px; }
+
+      .logo-icon .row:first-child .bar:nth-child(1) { width: 16.5px; }
+      .logo-icon .row:first-child .bar:nth-child(2) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(4) { width: 2.75px; }
+      .logo-icon .row:first-child .bar:nth-child(5) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(1) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(2) { width: 8.25px; }
+      .logo-icon .row:last-child .bar:nth-child(3) { width: 2.75px; }
+      .logo-icon .row:last-child .bar:nth-child(4) { width: 11px; }
+      .logo-icon .row:last-child .bar:nth-child(5) { width: 2.75px; }
+
+      .logo-text {
+        font-size: 34px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="row">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <span class="logo-text">Countline</span>
+    </a>
+
+    <h1 class="title">Privacy Policy</h1>
+
+    <div class="text">
+      <p>Effective Date: May 8, 2026<br><br>This Privacy Policy explains how Countline ("the App", "we", "us", or "our") handles your information.<br><br>Countline is designed to help you create countdowns, organize important events, use checklists, reminders, widgets, themes, categories, and app customization features. We believe your personal events and plans should stay private.<br><br>Countline is developed by Roxman Agency.</p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We do not collect, transmit, sell, or share your personal data.<br><br>The App does not require an account, registration, or sign-in.<br><br>The events, countdown cards, dates, checklists, notes, categories, reminders, widget preferences, theme settings, color settings, appearance settings, and other app preferences you create in the App are stored on your device and, if you enable iCloud sync, may be synchronized through your personal iCloud account.<br><br>We do not use your data for advertising or tracking.</p>
+
+      <h2>2. Data Stored on Your Device and in iCloud</h2>
+      <p>The App may store the following information locally on your device and, if iCloud sync is enabled, in your personal iCloud account:<br><br>• Countdown cards<br>• Event names<br>• Event dates<br>• Checklist items<br>• Notes<br>• Categories<br>• Reminder settings<br>• Widget preferences<br>• Theme, color, and appearance settings<br>• App preferences<br><br>This information is used only to provide the App's core functionality, including countdowns, checklists, reminders, widgets, customization, and syncing across your Apple devices.<br><br>We do not sell this data, use it for advertising, or share it with third-party advertisers.</p>
+
+      <h2>3. iCloud Sync and Backups</h2>
+      <p>Countline may offer optional iCloud sync.<br><br>If iCloud sync is enabled, your App data may be stored in your personal iCloud account and synchronized across your Apple devices.<br><br>iCloud storage, syncing, and backups are provided by Apple and are controlled by your Apple ID, iCloud settings, and device settings.<br><br>We do not operate our own server for storing your App data.<br><br>You can manage iCloud settings, backups, and app access to iCloud in your device settings.</p>
+
+      <h2>4. Notifications and Reminders</h2>
+      <p>The App may ask for permission to send notifications.<br><br>Notifications are used only to remind you about events, countdowns, or checklist-related items that you create.<br><br>You can enable, disable, or manage notification permissions at any time in your device settings.</p>
+
+      <h2>5. Widgets</h2>
+      <p>The App may provide Home Screen and Lock Screen widgets.<br><br>Widgets display information from the countdown cards and events you create in the App. This information is processed on your device and, where applicable, may use data synced through your personal iCloud account.</p>
+
+      <h2>6. Purchases</h2>
+      <p>The App may offer optional in-app purchases, such as unlocking premium themes and advanced category customization features, including renaming, sorting, and adding categories.<br><br>All purchases are processed by Apple through the App Store.<br><br>We do not collect, process, or store your payment information, such as your credit card number, billing address, or Apple ID payment details.<br><br>The App may use Apple's StoreKit framework to check purchase status, restore previous purchases, and provide access to purchased features.<br><br>Purchase history, refunds, billing, and payment processing are managed by Apple according to Apple's own terms and privacy policies.</p>
+
+      <h2>7. Analytics and Tracking</h2>
+      <p>The App does not currently use third-party analytics.<br>The App does not use third-party tracking.<br>The App does not track you across apps or websites.<br>The App does not collect advertising identifiers.<br>The App does not sell or share your data with advertisers.<br>If we add optional analytics in the future, this Privacy Policy will be updated and any required permissions will be requested where applicable.</p>
+
+      <h2>8. Advertising</h2>
+      <p>The App does not display ads.<br>We do not use your data for advertising purposes.</p>
+
+      <h2>9. Third-Party Services</h2>
+      <p>The App uses Apple services, such as iCloud / CloudKit and the App Store, to provide optional syncing and in-app purchase functionality.<br><br>The App does not currently use third-party analytics, advertising, or tracking services.<br><br>If we add other third-party services in the future, this Privacy Policy will be updated to explain what services are used and why.</p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>The App is not intended to collect personal information from children.<br><br>We do not knowingly collect personal data from children. Since the App does not require an account and stores data on the device and, if enabled, in the user's personal iCloud account, we do not knowingly receive personal information from users of any age.</p>
+
+      <h2>11. Data Deletion</h2>
+      <p>Because your data is stored locally on your device and may be synced through iCloud, you can delete your data by:<br><br>• Deleting countdown cards, events, checklists, notes, or categories inside the App<br>• Disabling iCloud sync for the App in your device settings<br>• Deleting the App from your device<br>• Managing or deleting related iCloud data in your Apple device settings<br>• Managing your device or iCloud backup settings<br><br>We do not maintain a separate server copy of your App data.</p>
+
+      <h2>12. Data Export and Sharing</h2>
+      <p>The App does not currently provide data export or sharing functionality.<br><br>Your countdown cards, events, checklists, notes, categories, and app settings remain within the App and, if enabled, your personal iCloud account.</p>
+
+      <h2>13. Security</h2>
+      <p>We design the App to keep your information private and under your control.<br><br>However, no device, software system, or cloud service can be guaranteed to be completely secure. You are responsible for maintaining the security of your device, Apple ID, iCloud account, and backups.</p>
+
+      <h2>14. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time.<br><br>If we make changes, we will update the "Effective Date" at the top of this page.<br><br>Your continued use of the App after any changes means that you accept the updated Privacy Policy.</p>
+
+      <h2>15. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, you can contact us at:<br><br><a href="mailto:support@countline.app">support@countline.app</a><br><a href="https://www.countline.app">www.countline.app</a></p>
+    </div>
+  </div>
+</body>
+</html>
