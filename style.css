@@ -396,6 +396,30 @@ body.legal .page {
   letter-spacing: -0.43px;
 }
 
+/* ── Feature List (Accessibility) ── */
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.43px;
+}
+
+.feature-list .bullet {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 18px;
+}
+
 
 /* ══════════════════════════════════════
    Shared Responsive: Logo (Mobile)
