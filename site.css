@@ -350,3 +350,85 @@ h1 .grey { color: var(--ink-3); }
 @media (prefers-reduced-motion: reduce) {
   .btn { transition: none; }
 }
+
+/* ══════════════════════════════════════
+   Legal Pages (Privacy, Terms, Accessibility)
+   ══════════════════════════════════════ */
+
+.legal-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px max(var(--side), env(safe-area-inset-left, 0px)) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.legal-page .title,
+.legal-page .text {
+  width: 100%;
+  max-width: 740px;
+}
+
+.legal-page .title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.legal-page .text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.legal-page .text h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.legal-page .text p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.43px;
+}
+
+.legal-page .text a {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.43px;
+}
+
+.feature-list .bullet {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .legal-page {
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+
+  .legal-page .title {
+    font-size: 28px;
+  }
+}
