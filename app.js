@@ -180,7 +180,7 @@
     el.style.width = el.style.height = d + 'px';
     if (kind === 'plus') { el.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>'; el.title = 'Drop your event'; }
     if (kind === 'check') el.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
-    if (kind === 'shake') { el.innerHTML = '<div><b>Tap</b><span>to shake</span></div>'; el.title = 'Shake the pile'; }
+    if (kind === 'shake') { el.innerHTML = '<div><b>Tap</b></div>'; el.title = 'Shake the pile'; }
     stage.appendChild(el);
     const body = Bodies.circle(x, y, d / 2, { restitution: 0.45, friction: 0.2, frictionAir: 0.015, density: 0.002 });
     Composite.add(world, body);
@@ -282,6 +282,7 @@
     const it = press.it; press = null;
     if (moved > 8) return; // it was a drag, not a tap
     if (it.kind === 'plus') dropCurrent();
+    if (it.kind === 'check') clearCards();
     if (it.kind === 'shake') shake();
     if (it.kind === 'store') window.open(APP_STORE_URL, '_blank', 'noopener');
   });
@@ -316,6 +317,12 @@
 
   /* actions */
   let colorIndex = 0;
+  function clearCards() {
+    const cards = items.filter(i => i.kind === 'card');
+    const bottom = cards.sort((a, b) => b.body.position.y - a.body.position.y);
+    const count = Math.min(bottom.length, 3);
+    for (let i = 0; i < count; i++) setTimeout(() => fadeOut(bottom[i]), i * 120);
+  }
   function dropCurrent() {
     const name = nameInput.value.trim() || IDEAS[ideaIndex][0];
     const s = scale();
