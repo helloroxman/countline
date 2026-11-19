@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <title>Countline — Countdown App for Important Dates</title>
+  <meta name="description" content="Count days until important events, plan with checklists, set reminders, and keep upcoming moments visible with clean widgets.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Countline home">
+      <svg class="logo-mark" viewBox="4 4 40 40" aria-hidden="true">
+        <defs>
+          <clipPath id="pill-a"><rect x="4" y="4" width="40" height="18.86" rx="9.43"/></clipPath>
+          <clipPath id="pill-b"><rect x="4" y="25.14" width="40" height="18.86" rx="9.43"/></clipPath>
+        </defs>
+        <g clip-path="url(#pill-a)">
+          <rect x="4" y="4" width="24" height="19" fill="#FF7C02"/><rect x="28" y="4" width="4" height="19" fill="#FCD12D"/><rect x="32" y="4" width="4" height="19" fill="#0381EF"/><rect x="36" y="4" width="4" height="19" fill="#FFA0F6"/><rect x="40" y="4" width="4" height="19" fill="#AF78D3"/>
+        </g>
+        <g clip-path="url(#pill-b)">
+          <rect x="4" y="25" width="4" height="19" fill="#FCD12D"/><rect x="8" y="25" width="12" height="19" fill="#FFA0F6"/><rect x="20" y="25" width="4" height="19" fill="#0381EF"/><rect x="24" y="25" width="16" height="19" fill="#D0FA34"/><rect x="40" y="25" width="4" height="19" fill="#019644"/>
+        </g>
+      </svg>
+      <span class="logo-text">Countline</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-head">
+        <h1 id="hero-title">Every important day <span class="grey">starts somewhere</span></h1>
+
+        <form class="drop" id="drop-form" novalidate>
+          <div class="drop-input">
+            <label class="field field-event" for="event-name">
+              <span class="field-label">Your Event</span>
+              <input id="event-name" name="event" type="text" maxlength="32" autocomplete="off" spellcheck="false" value="Daughter’s Birthday">
+            </label>
+            <button class="field field-date" id="date-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="calendar">
+              <span class="visually-hidden">Date: </span><span id="date-label">Mar 14</span>
+            </button>
+          </div>
+          <button class="btn" type="submit">Drop It</button>
+
+          <div class="calendar" id="calendar" role="dialog" aria-modal="false" aria-label="Choose a date" hidden>
+            <div class="cal-month">
+              <span id="cal-title">March 2026</span>
+              <span class="cal-nav">
+                <button type="button" id="cal-prev" aria-label="Previous month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+                <button type="button" id="cal-next" aria-label="Next month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+              </span>
+            </div>
+            <div class="cal-dow" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="cal-days" id="cal-days" role="grid"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="pile-floor" aria-hidden="true"></div>
+      <div class="stage" id="stage" aria-label="A pile of countdown cards. Drag and throw them." role="img"></div>
+      <p class="tilt-hint" id="tilt-hint" hidden>Tilt your phone to move the cards</p>
+    </section>
+
+    <section class="bottom" aria-label="Contact">
+      <div class="social-icons">
+        <a href="https://x.com/countlineapp" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.29 10.16L23.03 0h-2.07l-7.6 8.83L7.33 0H.34l9.16 13.34L.34 24h2.07l8.01-9.31 6.4 9.31h6.99l-9.5-13.84Zm-2.84 3.3l-.93-1.33L3.16 1.56h3.18l5.96 8.53.93 1.33 7.75 11.09h-3.18l-6.35-9.05Z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/countlineapp" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 24H0V0h24v24ZM3.55 20.46h3.57V9H3.55v11.46ZM16.18 8.72c-1.73 0-2.9.95-3.37 1.85h-.05V9H9.35v11.46h3.56v-5.67c0-1.49.28-2.94 2.13-2.94 1.83 0 1.85 1.71 1.85 3.04v5.57h3.56v-6.28c0-3.09-.67-5.46-4.27-5.46ZM5.33 3.3a2.07 2.07 0 0 0 0 4.13 2.07 2.07 0 0 0 0-4.13Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <p>In the meantime, if you need to contact us you can reach us at <a href="mailto:hello@countline.app">hello@countline.app</a> or through our accounts on <a href="https://x.com/countlineapp" target="_blank" rel="noopener">X</a> (formerly Twitter) and <a href="https://linkedin.com/company/countlineapp" target="_blank" rel="noopener">LinkedIn</a> below.</p>
+      <nav class="legal-links" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="https://apps.apple.com/app/id6771420862" target="_blank" rel="noopener" class="visually-hidden">Download Countline on the App Store</a>
+      </nav>
+    </section>
+  </main>
+
+  <script src="vendor/matter.min.js"></script>
+  <script src="app.js"></script>
+  <script async data-id="101505988" src="//static.getclicky.com/js"></script>
+  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101505988ns.gif" /></p></noscript>
+</body>
+</html>
