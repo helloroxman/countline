@@ -357,19 +357,14 @@
   }
   (function schedule() { setTimeout(() => { burst(); schedule(); }, 4500 + Math.random() * 3000); })();
 
-  // a new idea falls into the pile every 5 seconds
-  let autoIdea = 1;
+  // a new idea falls into the pile every 5 seconds — uses whatever is in the input
   setInterval(() => {
     if (reduceMotion || document.hidden || !stageVisible || !started || mc.body) return;
-    // if the settled pile already reaches the form, make room instead of adding
     const floorTop = H - (floor ? floor.clientHeight : 640);
     const settled = items.filter(i => i.kind === 'card' && i.body.speed < 0.6);
     const top = settled.length ? Math.min(...settled.map(i => i.body.bounds.min.y)) : H;
     if (top < floorTop + 24) { const oldest = items.find(i => i.kind === 'card'); if (oldest) fadeOut(oldest); return; }
-    const [n, m, d] = IDEAS[autoIdea++ % IDEAS.length];
-    const s = scale();
-    addCard({ name: n, date: next(m, d), color: COLORS[colorIndex++ % COLORS.length], width: 300 + Math.random() * 220,
-      angle: (Math.random() - 0.5) * 0.8, x: W * (0.15 + Math.random() * 0.7), y: -140 * s });
+    dropCurrent();
   }, 5000);
 
   /* phone tilt moves the pile (iOS asks for permission on the first tap) */
