@@ -63,7 +63,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .logo { display: inline-flex; align-items: center; gap: 13px; text-decoration: none; pointer-events: auto; }
 .logo-mark { width: 39px; height: 39px; flex: none; }
-.logo-text { font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; }
+.logo-text { font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; }
 
 /* ── Hero ── */
 .hero {
