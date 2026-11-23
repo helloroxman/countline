@@ -68,8 +68,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ── Hero ── */
 .hero {
   position: relative;
-  max-width: 1440px;
-  margin: 0 auto;
   padding-top: 72px;
   /* the whole first screen fits the browser; only the contact block sits below */
   height: calc(100vh - var(--header));
@@ -84,6 +82,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   flex-direction: column;
   gap: 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   padding-left: max(var(--side), env(safe-area-inset-left, 0px));
   padding-right: max(var(--side), env(safe-area-inset-right, 0px));
   pointer-events: none; /* cards behind the text stay draggable */
